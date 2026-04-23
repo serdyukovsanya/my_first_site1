@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин моноколёс</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header__inner">
+            <a href="#" class="logo">MonoDrive</a>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li><a href="#home">Главная</a></li>
+                    <li><a href="#about">Что это</a></li>
+                    <li><a href="#catalog">Модели</a></li>
+                    <li><a href="#reviews">Отзывы</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>Моноколесо - транспорт будущего</h1>
+                <p>Одно колесо, которое едет само и держит равновесие.</p>
+                <a href="#catalog" class="btn">Смотреть модели</a>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title">Что такое моноколесо?</h2>
+                <div class="about__grid">
+                    <div class="about__card">
+                        <h3>Гироскоп</h3>
+                        <p>Система держит равновесие, вы управляете наклоном.</p>
+                    </div>
+                    <div class="about__card">
+                        <h3>Мотор</h3>
+                        <p>Мощность до 4000 Вт, скорость до 50 км/ч.</p>
+                    </div>
+                    <div class="about__card">
+                        <h3>Портативность</h3>
+                        <p>Вес от 10 кг, можно занести в метро или офис.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="catalog" class="catalog">
+            <div class="container">
+                <h2 class="section-title">Популярные модели</h2>
+                <div class="catalog__grid">
+                    <article class="card">
+                        <div class="card__img">InMotion V11</div>
+                        <div class="card__content">
+                            <h3>InMotion V11</h3>
+                            <ul class="specs">
+                                <li>2200 Вт</li>
+                                <li>55 км/ч</li>
+                                <li>1500 Вт·ч</li>
+                            </ul>
+                            <span class="price">129 900 ₽</span>
+                            <button class="btn">В корзину</button>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card__img">Kingsong S22</div>
+                        <div class="card__content">
+                            <h3>Kingsong S22</h3>
+                            <ul class="specs">
+                                <li>4000 Вт</li>
+                                <li>70 км/ч</li>
+                                <li>2200 Вт·ч</li>
+                            </ul>
+                            <span class="price">219 000 ₽</span>
+                            <button class="btn">В корзину</button>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card__img">Begode Master</div>
+                        <div class="card__content">
+                            <h3>Begode Master</h3>
+                            <ul class="specs">
+                                <li>3500 Вт</li>
+                                <li>80 км/ч</li>
+                                <li>2400 Вт·ч</li>
+                            </ul>
+                            <span class="price">189 000 ₽</span>
+                            <button class="btn">В корзину</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="reviews" class="reviews">
+            <div class="container">
+                <h2 class="section-title">Отзывы райдеров</h2>
+                <div class="reviews__flex">
+                    <div class="review-card">
+                        <div class="stars">★★★★★</div>
+                        <p>Пересел с электросамоката — небо и земля! Маневренность потрясающая.</p>
+                        <span class="author"> Алексей, Москва</span>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars">★★★★★</div>
+                        <p>Брал V11 для поездок на работу. Заряда хватает на 3 дня.</p>
+                        <span class="author"> Марина, СПб</span>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars">★★★★☆</div>
+                        <p>Мощный зверь! Уже 500 км накатал, полёт нормальный.</p>
+                        <span class="author"> Дмитрий, Казань</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="subscribe">
+            <div class="container subscribe__flex">
+                <div class="subscribe__info">
+                    <h2>Подписка на новости</h2>
+                    <p>Узнавайте о скидках и новых моделях первыми.</p>
+                </div>
+                <form class="subscribe-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Ваше имя" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" id="agree" required>
+                        <label for="agree">Согласен на обработку</label>
+                    </div>
+                    <button type="submit" class="btn">Подписаться</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>MonoDrive. Учебный проект.</p>
+        </div>
+    </footer>
+</body>
+</html>
