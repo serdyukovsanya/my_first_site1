@@ -1,8 +1,8 @@
 :root {
-    --blue: #46e426;
-    --dark: #111;
-    --gray: #222;
-    --white: #ffffff;
+    --main-color: #61dd3b;
+    --dark-bg: #111;
+    --card-bg: #222;
+    --text-light: #fff;
 }
 
 * {
@@ -13,17 +13,18 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: var(--dark);
-    color: var(--white);
+    background-color: var(--dark-bg);
+    color: var(--text-light);
     line-height: 1.5;
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
+/* Шапка */
 .header {
     background-color: #1a1a1a;
     padding: 15px 0;
@@ -32,35 +33,44 @@ body {
     z-index: 100;
 }
 
-.header__inner {
+.header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-left: 0;
 }
 
 .logo {
-    color: var(--white);
+    color: var(--main-color);
     font-size: 24px;
     font-weight: bold;
     text-decoration: none;
+    margin-left: 10px;
 }
 
 .nav__list {
     display: flex;
-    list-style: none;
     gap: 30px;
+    list-style: none;
 }
 
-.nav__list a {
+.nav-link {
     color: #ccc;
     text-decoration: none;
+    font-weight: 500;
     transition: color 0.3s;
 }
 
-.nav__list a:hover {
-    color: var(--blue);
+.nav-link:hover {
+    color: var(--main-color);
 }
 
+.cart-icon {
+    font-size: 24px;
+    color: var(--text-light);
+}
+
+/* Главный экран */
 .hero {
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
                 url('https://monokoleso.eu/img/gallery2/mount.jpg');
@@ -82,7 +92,7 @@ body {
 
 .btn {
     display: inline-block;
-    background-color: var(--blue);
+    background-color: var(--main-color);
     color: #000;
     padding: 12px 30px;
     border-radius: 30px;
@@ -91,6 +101,7 @@ body {
     border: none;
     cursor: pointer;
     transition: all 0.3s;
+    font-size: 16px;
 }
 
 .btn:hover {
@@ -98,14 +109,19 @@ body {
     transform: scale(1.05);
 }
 
-.section-title {
+/* Каталог */
+.catalog {
+    padding: 60px 0;
+}
+
+.catalog h2 {
     text-align: center;
+    margin-bottom: 40px;
     font-size: 36px;
-    margin: 60px 0 40px;
     position: relative;
 }
 
-.section-title::after {
+.catalog h2::after {
     content: '';
     position: absolute;
     bottom: -10px;
@@ -113,64 +129,37 @@ body {
     transform: translateX(-50%);
     width: 60px;
     height: 3px;
-    background-color: var(--blue);
-}
-
-.about__grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin-bottom: 40px;
-}
-
-.about__card {
-    background-color: var(--gray);
-    padding: 30px;
-    border-radius: 12px;
-    text-align: center;
-    transition: transform 0.3s;
-}
-
-.about__card:hover {
-    transform: translateY(-5px);
-    border: 1px solid var(--blue);
-}
-
-.about__card h3 {
-    color: var(--blue);
-    margin-bottom: 15px;
+    background-color: var(--main-color);
 }
 
 .catalog__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    margin-bottom: 60px;
 }
 
 .card {
-    background-color: var(--gray);
+    background-color: var(--card-bg);
     border-radius: 12px;
     overflow: hidden;
-    transition: all 0.3s;
-    animation: fadeIn 0.8s;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 10px 20px rgba(70, 228, 38, 0.2);
+    box-shadow: 0 10px 20px rgba(97, 221, 59, 0.2);
 }
 
 .card__img {
-    height: 180px;
-    background: linear-gradient(45deg, #333, #1a1a1a);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--blue);
-    font-weight: bold;
-    font-size: 20px;
-    text-transform: uppercase;
+    height: 200px;
+    overflow: hidden;
+}
+
+.card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .card__content {
@@ -184,16 +173,16 @@ body {
 .specs {
     list-style: none;
     display: flex;
-    flex-wrap: wrap;
     gap: 10px;
-    margin: 15px 0;
     color: #aaa;
+    margin: 10px 0;
+    padding: 0;
 }
 
 .price {
     font-size: 24px;
     font-weight: bold;
-    color: var(--blue);
+    color: var(--main-color);
     display: block;
     margin: 15px 0;
 }
@@ -203,63 +192,20 @@ body {
     text-align: center;
 }
 
-.reviews {
-    padding: 20px 0 60px;
-}
-
-.reviews__flex {
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.review-card {
-    background-color: var(--gray);
-    padding: 30px;
-    border-radius: 12px;
-    flex: 1 1 280px;
-    transition: transform 0.3s;
-}
-
-.review-card:hover {
-    transform: scale(1.02);
-    border: 1px solid var(--blue);
-}
-
-.stars {
-    color: gold;
-    font-size: 24px;
-    margin-bottom: 15px;
-}
-
-.author {
-    color: var(--blue);
-    font-weight: 500;
-    display: block;
-    margin-top: 15px;
-}
-
+/* Форма подписки */
 .subscribe {
     background-color: #1a1a1a;
     padding: 50px 0;
 }
 
-.subscribe__flex {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-}
-
-.subscribe__info {
-    flex: 1;
+.subscribe h2 {
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 .subscribe-form {
-    flex: 1;
-    background-color: var(--gray);
-    padding: 30px;
-    border-radius: 12px;
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 .form-group {
@@ -279,26 +225,25 @@ body {
 }
 
 .form-group input:focus {
-    border-color: var(--blue);
+    border-color: var(--main-color);
 }
 
-.form-group input[type="checkbox"] {
-    margin-right: 10px;
+.form-group label {
+    color: #ccc;
 }
 
+/* Подвал */
 .footer {
     background-color: #0a0a0a;
-    padding: 20px;
+    padding: 20px 0;
     text-align: center;
     color: #888;
 }
 
+/* Адаптивность */
 @media (max-width: 800px) {
-    .catalog__grid, .about__grid {
+    .catalog__grid {
         grid-template-columns: repeat(2, 1fr);
-    }
-    .subscribe__flex {
-        flex-direction: column;
     }
     .hero h1 {
         font-size: 36px;
@@ -306,26 +251,15 @@ body {
 }
 
 @media (max-width: 500px) {
-    .catalog__grid, .about__grid {
+    .catalog__grid {
         grid-template-columns: 1fr;
     }
-    .header__inner {
+    .header .container {
         flex-direction: column;
-        gap: 15px;
+        gap: 10px;
     }
     .nav__list {
         flex-wrap: wrap;
         justify-content: center;
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
     }
 }
