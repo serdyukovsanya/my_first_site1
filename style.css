@@ -24,7 +24,6 @@ body {
     padding: 0 20px;
 }
 
-/* Шапка */
 .header {
     background-color: #1a1a1a;
     padding: 15px 0;
@@ -70,7 +69,6 @@ body {
     color: var(--text-light);
 }
 
-/* Главный экран */
 .hero {
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
                 url('https://monokoleso.eu/img/gallery2/mount.jpg');
@@ -109,7 +107,6 @@ body {
     transform: scale(1.05);
 }
 
-/* Каталог */
 .catalog {
     padding: 60px 0;
 }
@@ -142,6 +139,7 @@ body {
     background-color: var(--card-bg);
     border-radius: 12px;
     overflow: hidden;
+    animation: fadeIn 0.8s ease forwards;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -192,7 +190,6 @@ body {
     text-align: center;
 }
 
-/* Форма подписки */
 .subscribe {
     background-color: #1a1a1a;
     padding: 50px 0;
@@ -232,7 +229,6 @@ body {
     color: #ccc;
 }
 
-/* Подвал */
 .footer {
     background-color: #0a0a0a;
     padding: 20px 0;
@@ -240,7 +236,6 @@ body {
     color: #888;
 }
 
-/* Адаптивность */
 @media (max-width: 800px) {
     .catalog__grid {
         grid-template-columns: repeat(2, 1fr);
@@ -261,5 +256,16 @@ body {
     .nav__list {
         flex-wrap: wrap;
         justify-content: center;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
